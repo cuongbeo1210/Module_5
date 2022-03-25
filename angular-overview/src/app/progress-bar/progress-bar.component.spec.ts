@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DemoColorpickerComponent } from './demo-colorpicker.component';
+import { ProgressBarComponent } from './progress-bar.component';
 
-describe('DemoColorpickerComponent', () => {
-  let component: DemoColorpickerComponent;
-  let fixture: ComponentFixture<DemoColorpickerComponent>;
+describe('ProcessBarComponent', () => {
+  let component: ProgressBarComponent;
+  let fixture: ComponentFixture<ProgressBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DemoColorpickerComponent ]
+      declarations: [ ProgressBarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DemoColorpickerComponent);
+    fixture = TestBed.createComponent(ProgressBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
