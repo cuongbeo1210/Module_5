@@ -3,35 +3,36 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FontSizeEditorComponent } from './font-size-editor/font-size-editor.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { RegisterComponent } from './components/pages/register/register.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { PetComponent } from './pet/pet.component';
-import { ProductComponent } from './product/product.component';
-import { CalculatorComponent } from './calculator/calculator.component'
-import { TestComponent } from './test/test.component';
-import { NameCardComponent } from './name-card/name-card.component';
-import { ProgressBarComponent } from './progress-bar/progress-bar.component';
-import { TodoComponent } from './todo/todo.component';
+import {HttpClientModule} from "@angular/common/http";
+import { HomeComponent } from './components/pages/home/home.component';
+import { AdminComponent } from './components/pages/admin/admin.component';
+import {AdminAuthGuard} from "./helper/admin-auth-guard";
+import {AuthGuard} from "./helper/auth-guard";
+import {AuthInterceptorProvider} from "./helper/jwt-interceptor";
 
 @NgModule({
   declarations: [
     AppComponent,
-    FontSizeEditorComponent,
-    PetComponent,
-    ProductComponent,
-    CalculatorComponent,
-    TestComponent,
-    NameCardComponent,
-    ProgressBarComponent,
-    TodoComponent
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AdminAuthGuard,
+    AuthGuard,
+    AuthInterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
